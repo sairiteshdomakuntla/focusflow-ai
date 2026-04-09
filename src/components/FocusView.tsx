@@ -95,8 +95,12 @@ export default function FocusView() {
       const { data: { user } } = await supabase.auth.getUser();
       if (!user) return;
       const task = tasks.find(t => t.id === selectedTaskId);
+      const { motivationSources } = useAppStore.getState();
       const { data } = await supabase.functions.invoke('ai-motivation', {
-        body: { userId: user.id, reason, taskTitle: task?.title || 'your task' },
+        body: {
+          userId: user.id, reason, taskTitle: task?.title || 'your task',
+          motivationSources: motivationSources.map(s => s.text),
+        },
       });
       if (data?.message) setCurrentMotivation(data.message);
     } catch { /* silent */ }
