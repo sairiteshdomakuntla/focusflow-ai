@@ -7,6 +7,7 @@ import TasksView from '@/components/TasksView';
 import FocusView from '@/components/FocusView';
 import AnalyticsView from '@/components/AnalyticsView';
 import SettingsView from '@/components/SettingsView';
+import PredictionView from '@/components/PredictionView';
 import Auth from './Auth';
 import type { Task, FocusSession, MotivationSource } from '@/stores/appStore';
 
@@ -58,6 +59,7 @@ export default function Index() {
     tasks: <TasksView />,
     focus: <FocusView />,
     analytics: <AnalyticsView />,
+    prediction: <PredictionView />,
     settings: <SettingsView />,
   };
 

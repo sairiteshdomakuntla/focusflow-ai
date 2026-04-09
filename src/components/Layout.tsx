@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { useAppStore } from '@/stores/appStore';
-import { LayoutDashboard, ListTodo, Timer, BarChart3, Settings, Zap, LogOut } from 'lucide-react';
+import { LayoutDashboard, ListTodo, Timer, BarChart3, Settings, Zap, LogOut, Brain } from 'lucide-react';
 import { supabase } from '@/integrations/supabase/client';
 import { toast } from 'sonner';
 
@@ -9,6 +9,7 @@ const navItems = [
   { id: 'tasks' as const, label: 'Tasks', icon: ListTodo },
   { id: 'focus' as const, label: 'Focus', icon: Timer },
   { id: 'analytics' as const, label: 'Analytics', icon: BarChart3 },
+  { id: 'prediction' as const, label: 'Prediction', icon: Brain },
   { id: 'settings' as const, label: 'Settings', icon: Settings },
 ];
 
